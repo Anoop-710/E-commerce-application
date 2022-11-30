@@ -1,0 +1,2 @@
+Create api folder for calling strapapi
+Client folder to display product on the Client side. So install react app on the Client folder
