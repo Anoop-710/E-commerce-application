@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,7 +12,7 @@ import Product from "./pages/Product/Product";
 import Products from "./pages/Products/Products";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-
+import {children} from 'react';
 
 const Layout = () =>{
   return(
@@ -34,11 +34,11 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/products/",
+        path: "/products/:id",
         element: <Product />,
       },
       {
-        path: "/product/",
+        path: "/product/:id",
         element: <Products />,
       },
     ]
