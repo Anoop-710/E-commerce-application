@@ -12,6 +12,8 @@ const Slider = () => {
     "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
   ];
 
+
+  //If currentSlide is 0 show the last slide else show the previous slide(same as old state)
   const prevSlide = () => {
     setCurrentSlide(currentSlide === 0 ? 2 : (prev) => prev - 1);
   };
