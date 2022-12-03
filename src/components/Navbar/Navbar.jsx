@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
@@ -9,8 +9,12 @@ import payment from '../../Assets/img/payment.png';
 import {Link} from 'react-router-dom';
 import './Navbar.scss';
 import { height } from '@mui/system';
+import Cart from '../Cart/Cart';
 
 const Navbar = () => {
+
+  // drop down card menu
+  const [open, setOpen] = useState(false)
   return (
     <div className='navbar'>
       <div className="wrapper">
@@ -63,7 +67,7 @@ const Navbar = () => {
             <SearchRoundedIcon />
             <PersonOutlineRoundedIcon />
             <FavoriteBorderRoundedIcon />
-            <div className="cartIcon">
+            <div className="cartIcon" onClick={()=>setOpen(!open)}>
               <ShoppingCartOutlinedIcon />
               <span>0</span>
             </div>
@@ -71,6 +75,7 @@ const Navbar = () => {
         
         </div>
       </div>
+      {open && <Cart />}
     </div>
   )
 }
